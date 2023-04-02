@@ -1,0 +1,147 @@
+.homePage {
+  display: flex;
+  flex-direction: row;
+  padding: 10% 7%;
+  gap: 5%;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  top: 80px;
+  bottom: 80px;
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 550px;
+  height: 645.97px;
+
+}
+
+.homeText {
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+  align-items: flex-end;
+  width: 50%;
+  text-align: right;
+}
+
+.homeText h1 {
+  font-family: "Inter";
+  font-style: oblique;
+  font-weight: 900;
+  font-size: 50px;
+  line-height: 50px;
+  letter-spacing: 0.04em;
+  text-shadow: 2px 4px #d9d9d9;
+  color: #000000;
+}
+
+.homeText p {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 34px;
+  letter-spacing: 0.05em;
+  padding-left: 10%;
+  margin-top: 2vh;
+  color: #373434;
+  opacity: 0.8;
+}
+
+.search-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 180px;
+  height: 40px;
+  margin-top: 10px;
+  background: #262323;
+  border: 1px solid #373434;
+
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.12), 0px 4px 5px rgba(0, 0, 0, 0.14),
+    0px 2px 4px -1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 26px;
+  letter-spacing: 0.46px;
+  text-transform: uppercase;
+
+  color: #d9d9d9;
+}
+
+.search-button:hover {
+  scale: 1.1;
+  cursor: pointer;
+}
+
+@media (max-width: 1330px) {
+  .homeText {
+    text-align: center;
+    align-items: center;
+    margin-top: 10%;
+    width: 80%;
+    padding-left: 0;
+  }
+  .homePage {
+    gap: 40px;
+    padding-top: 10%;
+    flex-wrap: wrap-reverse;
+  }
+  .homeText p {
+    padding: 0;
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 1600px){
+  .card {
+    width: 454.54px;
+    height: 533.85px;
+   
+  }
+}
+
+@media (max-width: 600px) {
+  .homePage {
+    padding-top: 20%;
+  }
+  .homeText {
+    text-align: center;
+    align-items: center;
+    margin-top: 10%;
+    width: 90%;
+    padding: 0;
+    gap: 10px;
+  }
+  .homePage p {
+    font-size: 15px;
+    line-height: 20px;
+  }
+  .homeText h1 {
+    font-size: 34px;
+    line-height: 40px;
+  }
+  .homeText button {
+    margin-top: 10px;
+  }
+
+  .card {
+    width: 366.66px;
+    height: 430.64px;
+  }
+}
+
+@media (min-width: 2200px) {
+  .homeText h1 {
+    font-size: 60px;
+    line-height: 60px;
+  }
+}
