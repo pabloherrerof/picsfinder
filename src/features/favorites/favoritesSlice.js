@@ -9,8 +9,12 @@ export const favoritesSlice = createSlice({
         searchDescriptionValue: "",
         orderValue: "none",
         fotoInfo: [],
+        favoriteFotos: readFotoLocalStorage(),
     },
     reducers:{
+      setFavoriteFotos: (state, action) =>{
+        state.favoriteFotos = action.payload;
+      },
       setOrderValue: (state, action) => {
         state.orderValue = action.payload;
       },
@@ -32,8 +36,9 @@ export const favoritesSlice = createSlice({
 export const getOrderValue = (state) => state.favorites.orderValue;
 export const getSearchDescriptionValue = (state) => state.favorites.searchDescriptionValue;
 export const getModalInfo = (state) => state.favorites.fotoInfo;
+export const getFavorites = (state) => state.favorites.favoriteFotos;
 
 
-export const {setOrderValue, setSearchDescription, deleteSearchDescription, setModalInfo} = favoritesSlice.actions;
+export const {setOrderValue, setSearchDescription, deleteSearchDescription, setModalInfo, setFavoriteFotos} = favoritesSlice.actions;
 export default favoritesSlice.reducer;
 

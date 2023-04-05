@@ -29,6 +29,12 @@ export const SearchBar = (props) => {
 
     }
 
+    const onInputFavsHandler = (e) =>{
+        const input = document.getElementById('searchInput').value;
+        const inputRefactor = input.replace(/\s+/g, "-");
+        dispatch(setSearchDescription(inputRefactor)); 
+    }
+
 
   if(props.page !== "myFavs"){
     return (<>
@@ -45,7 +51,7 @@ export const SearchBar = (props) => {
             <form className="searchBar" onSubmit={onSubmitFavsHandler}>
                 
                     <i className="searchIcon fa-solid fa-magnifying-glass fa-lg"></i>
-                    <input id="searchInput" className="searchBarInput" type='search' placeholder="Search images">
+                    <input id="searchInput" className="searchBarInput" type='search' placeholder="Search images" onInput={onInputFavsHandler}>
                     </input>
                     <button><i className="enterIcon fa-solid fa-circle-arrow-up fa-lg"></i></button>
                

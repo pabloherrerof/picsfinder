@@ -45,7 +45,7 @@ export const Search = () => {
         <div></div>
         <div className="errorSearch">
           <i className="errorSearchIcon fa-solid fa-x fa-beat fa-2xl"></i>{" "}
-          <h1>Something went wrong...</h1>
+          <h1>Something went wrong</h1>
           <p>Try again!</p>
         </div>
         <div></div>
@@ -79,7 +79,7 @@ export const Search = () => {
             <div></div>
             <div className="errorSearch">
               <i className="errorSearchIcon fa-solid fa-x fa-beat fa-2xl"></i>{" "}
-              <h1>We couldn't find anything... </h1>
+              <h1>We couldn't find anything</h1>
               <p>Search something else!</p>
             </div>
             <div></div>
@@ -124,7 +124,7 @@ export const Search = () => {
           <div className="favoriteModalContainer">
             <i
               className="heartModal fa-regular fa-heart fa-lg fa-beat"
-              style={{ paddingRight: "15px" }}
+              style={{ paddingRight: "2%" }}
             ></i>
             <h6>Pic added to your favorites!</h6>
           </div>

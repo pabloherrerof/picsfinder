@@ -2,10 +2,12 @@ import {
   checkIfExistsFoto,
   createFotoLocalStorage,
   deleteFotoLocalStorage,
+  readFotoLocalStorage,
   updateItemDescriptionLocalStorage,
 } from "../features/localStorage/localStorage";
 import {
-  getModalInfo,
+  
+  setFavoriteFotos,
   setModalInfo,
 } from "../features/favorites/favoritesSlice";
 import "./card.css";
@@ -15,7 +17,7 @@ import "../pages/modal.css";
 import { saveAs } from "file-saver";
 import { useState } from "react";
 
-//Componente that creates a Card with a background image
+//Component that creates a Card with a background image
 export const Card = (props) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -33,6 +35,7 @@ export const Card = (props) => {
       heart.classList.remove("fa-regular");
       heart.classList.add("fa-solid");
       document.getElementById("favoriteModal").showModal();
+      dispatch(setFavoriteFotos(readFotoLocalStorage()))
 
       setTimeout(() => {
         document.getElementById("favoriteModal").close();
@@ -42,6 +45,7 @@ export const Card = (props) => {
       heart.classList.remove("fa-solid");
       heart.classList.add("fa-regular");
       document.getElementById("unFavoriteModal").showModal();
+      dispatch(setFavoriteFotos(readFotoLocalStorage()))
 
       setTimeout(() => {
         document.getElementById("unFavoriteModal").close();
@@ -52,18 +56,20 @@ export const Card = (props) => {
   const onTrashClickHandler = (e) => {
     const foto = props.foto;
     deleteFotoLocalStorage({ foto });
+   
+    dispatch(setFavoriteFotos(readFotoLocalStorage()))
 
     document.getElementById("deleteModal").showModal();
     
 
     setTimeout(() => {
       document.getElementById("deleteModal").close();
-      window.location.reload();
+      /* window.location.reload(); */
     }, 1000);
   };
 
   const onDownloadClickHandler = (e) => {
-    //document.getElementById("downloadModal").showModal();
+    document.getElementById("downloadModal").showModal();
     console.log(props.foto);
     saveAs(props.foto.download, `image_${props.foto.id}.jpg`);
     setTimeout(() => {
@@ -83,15 +89,7 @@ export const Card = (props) => {
   };
 
   const editHandler = (e) => {
-    const value = e.target.previousSibling.innerText;
     setEditDescription(true);
-
-    /* document.getElementById("descriptionValue").remove()
-    console.log(value);
-
-   
-  
-    e.target.remove()  */
   };
 
   const saveDescriptionHandler = () => {
@@ -99,6 +97,7 @@ export const Card = (props) => {
     updateItemDescriptionLocalStorage(props.foto, value);
     dispatch(setModalInfo(props.foto));
     setEditDescription(false);
+    dispatch(setFavoriteFotos(readFotoLocalStorage()))
   };
 
   if (props.page === "home") {
@@ -186,17 +185,18 @@ export const Card = (props) => {
             style={{ backgroundImage: picture.image, backgroundSize: "cover" }}
           ></div>
           <div className="icons">
-            <i
-              className=" favoriteCardIcon fa-solid fa-download fa-lg"
-              style={{ paddingRight: "15px" }}
-              onClick={onDownloadClickHandler}
-            ></i>
-            <div className="rightIcons">
-              <i
+          <i
                 className=" favoriteCardIcon fa-solid fa-trash fa-lg"
                 style={{ paddingRight: "15px" }}
                 onClick={onTrashClickHandler}
               ></i>
+            <div className="rightIcons">
+              
+              <i
+              className=" favoriteCardIcon fa-solid fa-download fa-lg"
+              style={{ paddingRight: "15px" }}
+              onClick={onDownloadClickHandler}
+            ></i>
 
               <i
                 className="favoriteCardIcon fa-solid fa-circle-info fa-lg"
@@ -209,7 +209,6 @@ export const Card = (props) => {
       </div>
     );
   } else if (props.page === "modal") {
-    console.log(editDescription)
     if (editDescription === false) {
       const picture = {
         image: `url(${props.foto.image})`,
@@ -240,7 +239,7 @@ export const Card = (props) => {
                   </div>
 
                   <i
-                    class="fa-solid fa-pen-to-square  editIcon"
+                    className="fa-solid fa-pen-to-square  editIcon"
                     onClick={editHandler}
                   ></i>
                 </div>
@@ -359,4 +358,4 @@ export const Card = (props) => {
   }
 };
 
-//fa-solid da a el corazon el fondo
+
