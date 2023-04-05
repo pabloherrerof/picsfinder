@@ -1,3 +1,5 @@
+
+//Function that creates the favorites Array with the objects of all favorites photos
 export const createFotoLocalStorage = (foto) => {
   const fotosLocalStorage = localStorage.getItem("favorites");
   if (fotosLocalStorage != null) {
@@ -17,6 +19,7 @@ export const createFotoLocalStorage = (foto) => {
   }
 };
 
+//Function that returns the data of the LocalStorage
 export const readFotoLocalStorage = () => {
   const fotoLocalStorage = localStorage.getItem("favorites");
   if (fotoLocalStorage != null) {
@@ -26,6 +29,7 @@ export const readFotoLocalStorage = () => {
   return [];
 };
 
+//Function that checks if a photo exists on the LocalStorage
 export const checkIfExistsFoto = (foto) => {
   let exits = false;
   readFotoLocalStorage().forEach((obj) => {
@@ -38,6 +42,7 @@ export const checkIfExistsFoto = (foto) => {
   return exits;
 };
 
+//Function that deletes a photo from the LocalStorage
 export const deleteFotoLocalStorage = (foto) => {
     const fotosLocalStorage = localStorage.getItem('favorites')
     if(fotosLocalStorage !== null){
@@ -58,6 +63,7 @@ export const deleteFotoLocalStorage = (foto) => {
     }
 }; 
 
+//Function that updates de description of a photo of the LocalStorage with a new value
 export const updateItemDescriptionLocalStorage = (foto, newValue) => {
   const fotosOnLocal = readFotoLocalStorage();
   console.log(fotosOnLocal)

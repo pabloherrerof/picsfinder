@@ -39,15 +39,16 @@ export const OrderByMenu = () => {
       <Button
         style={{
           background: "#262323",
-          borderRadius: "4px",
+          borderRadius: "20px",
           fontFamily: "'Inter'",
           fontStyle: "normal",
           fontWeight: "400",
           fontSize: "14px",
           lineHeight: "29px",
-          textAlign: "start",
+          textAlign: "center",
           color: "#D9D9D9",
-          width: "120px",
+          width: "150px",
+          
         }}
         id="basic-button"
         aria-controls={open ? "basic-menu" : undefined}
@@ -62,9 +63,10 @@ export const OrderByMenu = () => {
         anchorEl={anchorEl}
         open={open}
         onClose={handleClose}
+        style={{marginLeft: "14px"}}
         MenuListProps={{
           "aria-labelledby": "basic-button",
-          className: "menuList",
+          className:"menuList",
         }}
       >
         <MenuItem className="menuItem" onClick={handleClickItem}>

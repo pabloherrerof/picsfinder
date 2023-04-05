@@ -19,7 +19,7 @@ export const Search = () => {
   const searchStatus = useSelector(getSearchStatus);
   const searchData = useSelector(getSearchData);
   const searchItem = useSelector(getSearchItem);
- 
+ console.log("hola")
 
   useEffect( () =>{
     

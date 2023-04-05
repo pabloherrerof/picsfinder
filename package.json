@@ -1,7 +1,7 @@
 {
   "name": "picsfinder",
   "version": "0.1.0",
-  "homepage": "https://pabloherrerof.github.io/PicsfinderDeploy",
+  "homepage": "https://pabloherrerof.github.io/picsfinder",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.10.6",

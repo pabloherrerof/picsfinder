@@ -17,8 +17,9 @@ export const searchSlice = createSlice({
         state.searchedItem = "";
         state.status = "none";
         state.data = [];
-      }
+      },
     },
+  
     extraReducers(builder) {
         builder
           .addCase(fetchFotos.fulfilled, (state, action) => {

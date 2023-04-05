@@ -8,8 +8,12 @@ font-family: 'Inter';
 font-style: normal;
 width: 120px;
 color: #D9D9D9;
+text-align: center;
+
+
 }
 
 .menuItem{
     height: 32px;
+    color: #605A5A;
 }

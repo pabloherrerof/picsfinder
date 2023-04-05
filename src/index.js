@@ -2,7 +2,7 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
 import { HomePage } from './pages/HomePage';
-import { BrowserRouter, HashRouter, Route, Routes } from 'react-router-dom';
+import {  HashRouter, Route, Routes } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { store } from './app/store.js';
 import { MyFavorites } from './pages/MyFavorites';
