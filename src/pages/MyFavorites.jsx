@@ -9,41 +9,27 @@ import { OrderByMenu } from "../components/OrderByMenu";
 import {
   getFavorites,
   getOrderValue,
-  getSearchDescriptionValue, 
+  getSearchDescriptionValue,
 } from "../features/favorites/favoritesSlice";
 import { useSelector } from "react-redux";
-import './home.css'
-
-
-
+import "./home.css";
 
 export const MyFavorites = () => {
   const searchDescriptionValue = useSelector(getSearchDescriptionValue);
   const orderByValue = useSelector(getOrderValue);
   const favoritas = useSelector(getFavorites);
 
- 
-
-
-
-
-
- 
-
   //location reload
-  
 
   const orderFotos = (orderValue, array) => {
-     return array.sort(function (a, b) {
+    return array.sort(function (a, b) {
       return b[orderValue] - a[orderValue];
     });
-  }; 
-
-  const searchFotosByDescription = (searchItem) => {
-    return favoritas.filter((obj) => obj.description.includes(searchItem) > 0); 
   };
 
-  
+  const searchFotosByDescription = (searchItem) => {
+    return favoritas.filter((obj) => obj.description.includes(searchItem) > 0);
+  };
 
   let content;
   if (favoritas.length > 0) {
@@ -62,12 +48,12 @@ export const MyFavorites = () => {
           <div></div>
         </>
       );
-    } else {    
+    } else {
       content = [];
       let key = 0;
-      orderFotos(orderByValue, searchedFavoritas)
+      orderFotos(orderByValue, searchedFavoritas);
       searchedFavoritas.forEach((object) => {
-       //id, description, width, height, likes, los urls full
+        //id, description, width, height, likes, los urls full
         content.push(
           <div key={key} className="cardOnGallery">
             <Card foto={object} page={"favorites"} />
@@ -102,9 +88,6 @@ export const MyFavorites = () => {
     );
   }
 
-
-
-
   return (
     <>
       <TopBar />
@@ -119,7 +102,12 @@ export const MyFavorites = () => {
 
         <dialog id="downloadModal">
           <div className="downloadModalContainer">
-          <i className=" fa-solid fa-download fa-lg fa-beat"  style={{ paddingRight: "15px" }}> </i>
+            <i
+              className=" fa-solid fa-download fa-lg fa-beat"
+              style={{ paddingRight: "15px" }}
+            >
+              {" "}
+            </i>
             <h6>Pic download succesfully!</h6>
           </div>
         </dialog>

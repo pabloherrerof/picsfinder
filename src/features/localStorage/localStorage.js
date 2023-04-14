@@ -1,4 +1,3 @@
-
 //Function that creates the favorites Array with the objects of all favorites photos
 export const createFotoLocalStorage = (foto) => {
   const fotosLocalStorage = localStorage.getItem("favorites");
@@ -44,35 +43,33 @@ export const checkIfExistsFoto = (foto) => {
 
 //Function that deletes a photo from the LocalStorage
 export const deleteFotoLocalStorage = (foto) => {
-    const fotosLocalStorage = localStorage.getItem('favorites')
-    if(fotosLocalStorage !== null){
-        const fotosLocalStorageParse = JSON.parse(fotosLocalStorage);
-       
+  const fotosLocalStorage = localStorage.getItem("favorites");
+  if (fotosLocalStorage !== null) {
+    const fotosLocalStorageParse = JSON.parse(fotosLocalStorage);
 
-        fotosLocalStorageParse.data.forEach(obj => {
-           
-        })
-        let fotosFiltrada = fotosLocalStorageParse.data.filter(obj => obj.id !== foto.foto.id
-        )
-      
-       
-            const fotosFiltradasData = {
-                data: fotosFiltrada
-            } 
-        localStorage.setItem('favorites', JSON.stringify(fotosFiltradasData));        
-    }
-}; 
+    fotosLocalStorageParse.data.forEach((obj) => {});
+    let fotosFiltrada = fotosLocalStorageParse.data.filter(
+      (obj) => obj.id !== foto.foto.id
+    );
+
+    const fotosFiltradasData = {
+      data: fotosFiltrada,
+    };
+    localStorage.setItem("favorites", JSON.stringify(fotosFiltradasData));
+  }
+};
 
 //Function that updates de description of a photo of the LocalStorage with a new value
 export const updateItemDescriptionLocalStorage = (foto, newValue) => {
   const fotosOnLocal = readFotoLocalStorage();
-  console.log(fotosOnLocal)
-  const indexObjectToUpdate = fotosOnLocal.findIndex((obj) => obj.id === foto.id);
+  console.log(fotosOnLocal);
+  const indexObjectToUpdate = fotosOnLocal.findIndex(
+    (obj) => obj.id === foto.id
+  );
   fotosOnLocal[indexObjectToUpdate].description = newValue;
   let objectLocalStorage = {
     data: fotosOnLocal,
   };
-  
-  
-  localStorage.setItem('favorites', JSON.stringify(objectLocalStorage));
-}
+
+  localStorage.setItem("favorites", JSON.stringify(objectLocalStorage));
+};

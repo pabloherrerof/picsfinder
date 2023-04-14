@@ -1,83 +1,81 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 .topBar {
-    display: flex;
-    justify-content: space-between;
-    height: 80px;
-    background-color: #262323;
-    margin: 0;
-    align-items: center;
-    padding: 0 7%;
-    position: fixed;
-    top:0px;
-    width: 100%;
-    z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  background-color: #262323;
+  margin: 0;
+  align-items: center;
+  padding: 0 7%;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  z-index: 10;
 }
 
-.logo{
-    display:flex;
-    gap: 20px;
-    font-family: 'Minercraftory', sans-serif;
-    font-family: 'Minercraftory';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 56px;
-    text-align: center;
-    letter-spacing: 0.05em;
+.logo {
+  display: flex;
+  gap: 20px;
+  font-family: "Minercraftory", sans-serif;
+  font-family: "Minercraftory";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 56px;
+  text-align: center;
+  letter-spacing: 0.05em;
 
-color: #D9D9D9;
+  color: #d9d9d9;
 }
 
-.logo-icon{
-    width: 50px;
-    margin-top: 5px
+.logo-icon {
+  width: 50px;
+  margin-top: 5px;
 }
 
- #topBarList{
-    display: flex;
-    gap: 30px;
-    list-style: none;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 29px;
-    text-align: center;
+#topBarList {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 29px;
+  text-align: center;
 
-color: #D9D9D9;
+  color: #d9d9d9;
 }
 
-li{
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    height: 75px;
-    padding: 0 5px;
-    
-
+li {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  height: 75px;
+  padding: 0 5px;
 }
 
-li:hover{
-    scale: 1.2;
+li:hover {
+  scale: 1.2;
 }
 
-@media (max-width: 900px){
-    .topBar{
-        padding: 0 3%;
-    }
-    .logo-icon{
-        width: 30px
-    }
-    .logo{
-        font-size: 9px;
-        gap: 10px;
-    }
-    ul{
-        gap:15px;
-    }
+@media (max-width: 900px) {
+  .topBar {
+    padding: 0 3%;
+  }
+  .logo-icon {
+    width: 30px;
+  }
+  .logo {
+    font-size: 9px;
+    gap: 10px;
+  }
+  ul {
+    gap: 15px;
+  }
 }

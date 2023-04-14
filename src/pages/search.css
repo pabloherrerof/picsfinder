@@ -1,218 +1,199 @@
-.searchPage{
-    display: flex;
-    flex-direction: column;
-    padding: 150px 7%;
-    gap: 4%;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    gap: 2vh;
+.searchPage {
+  display: flex;
+  flex-direction: column;
+  padding: 150px 7%;
+  gap: 4%;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  gap: 2vh;
 }
 
-.fotosCollection{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    margin-top: 4em;
-    column-gap: 3em;
-    row-gap:  3em;
-    min-height: 60vh;
-    align-items: center;
-    justify-content: center;
+.fotosCollection {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-top: 4em;
+  column-gap: 3em;
+  row-gap: 3em;
+  min-height: 60vh;
+  align-items: center;
+  justify-content: center;
 }
-.cardOnGallery{
-    width: 439.92px;
-    height: 516.768px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.cardOnGallery {
+  width: 439.92px;
+  height: 516.768px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-frame-gallery {
+  background: #f4f1e7;
+  width: 100%;
+  height: 100%;
+  box-shadow: 5px 4px 20px rgba(0, 0, 0, 0.5);
+  padding-top: 10%;
+  padding-bottom: 15%;
+  padding-left: 6%;
+  padding-right: 6%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 7%;
+}
+
+.heart {
+  color: #d9281c;
+}
+
+.heart:hover {
+  scale: 1.2;
+  cursor: pointer;
+}
+
+.errorSearch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  text-align: center;
+}
+.errorSearch h1 {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  line-height: 29px;
+  letter-spacing: 0.05em;
+  font-size: 2em;
+}
+
+.errorSearchIcon {
+  color: #d9281c;
+}
+
+.errorSearch p {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 29px;
+  letter-spacing: 0.05em;
+  color: #7c7c7c;
+  padding-right: 2px;
+}
+
+.errorMessage {
+  min-height: 60vh;
+}
+
+.errorOrLoading {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#favoriteModal {
+  position: fixed;
+  margin: 87vh auto;
+  width: 220px;
+  height: 40px;
+  background: #d32f2f;
+  border-radius: 4px;
+  border: none;
+  color: #f4f1e7;
+  padding: 10px;
+}
+
+.favoriteModalContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 10px;
+  width: 100%;
+  height: 100%;
+}
+
+#favoriteModal h6 {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 143%;
+  letter-spacing: 0.15px;
+}
+
+#unFavoriteModal {
+  position: fixed;
+  margin: 87vh auto;
+  width: 250px;
+  height: 40px;
+  background: #262323;
+  border-radius: 4px;
+  border: none;
+  color: #f4f1e7;
+  padding: 10px;
+}
+
+.unFavoriteModalContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 10px;
+  width: 100%;
+  height: 100%;
+}
+
+#unFavoriteModal h6 {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 143%;
+  letter-spacing: 0.15px;
+}
+
+@media (max-width: 1900px) {
+  .cardOnGallery {
+    width: 366.6px;
+    height: 430.64px;
   }
-
-
-
-.card-frame-gallery{
-    background: #F4F1E7;
-    width: 100%;
-    height: 100%;
-    box-shadow: 5px 4px 20px rgba(0, 0, 0, 0.5);
-    padding-top: 10%;
-    padding-bottom: 15%;
-    padding-left: 6%;
-    padding-right: 6%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 7%
-
 }
 
-.heart{
-    color: #D9281C;
+@media (max-width: 1350px) {
+  .fotosCollection {
+    grid-template-columns: 1fr;
+  }
+  .searchPage {
+    padding-top: 150px;
+  }
+  .cardOnGallery {
+    width: 413.21px;
+    height: 485.35px;
+  }
 }
 
-.heart:hover{
-    scale: 1.2;
-    cursor: pointer;
+@media (max-width: 900px) {
+  .fotosCollection {
+    grid-template-columns: 1fr;
+  }
 }
 
-.errorSearch{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 20px;
-    text-align: center;
-}
-.errorSearch h1{
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 600;
-    line-height: 29px;
-    letter-spacing: 0.05em;
-    font-size: 2em;
-    
-}
-
-.errorSearchIcon{
-    color: #D9281C;
-}
-
-.errorSearch p{
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 29px;
-    letter-spacing: 0.05em;
-    color: #7C7C7C;
-    padding-right: 2px;
-}
-
-.errorMessage{ 
-    min-height: 60vh;
-    
-}
-
-.errorOrLoading{
-    min-height: 60vh;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-}
-
-#favoriteModal{
-    position: fixed;
-    margin: 87vh auto;
-    width: 220px;
-    height: 40px;
-    background: #D32F2F;
-    border-radius: 4px;
-    border: none;
-    color: #F4F1E7;
-    padding: 10px;
-   
-}
-
-.favoriteModalContainer{
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    gap: 10px;
-    width: 100%;
-    height: 100%;
-}
-
-#favoriteModal h6{
-font-family: 'Inter';
-font-style: normal;
-font-weight: 500;
-font-size: 12px;
-line-height: 143%;
-letter-spacing: 0.15px;
-}
-
-
-
-#unFavoriteModal{
-    position: fixed;
-    margin: 87vh auto;
-    width: 250px;
-    height: 40px;
-    background: #262323;
-    border-radius: 4px;
-    border: none;
-    color: #F4F1E7;
-    padding: 10px;
-   
-}
-
-.unFavoriteModalContainer{
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    gap: 10px;
-    width: 100%;
-    height: 100%;
-}
-
-#unFavoriteModal h6{
-font-family: 'Inter';
-font-style: normal;
-font-weight: 500;
-font-size: 12px;
-line-height: 143%;
-letter-spacing: 0.15px;
-}
-
-
-
-
-@media (max-width: 1900px){
-    .cardOnGallery{
-      width: 366.6px;
-      height: 430.64px;
-    
-    }
-}
-
-@media (max-width: 1350px){
-    .fotosCollection{
-        grid-template-columns: 1fr;
-    }
-    .searchPage{
-        padding-top: 150px;
-    }
-    .cardOnGallery{
-        width: 413.21px;
-        height: 485.35px;
-      
-      }
-    
-
-
-}
-
-@media (max-width: 900px){
-    .fotosCollection{
-        grid-template-columns: 1fr ;
-    }
-    
-}
-
-@media (max-width: 550px){
-    .cardOnGallery{
-            width: 305.5px;
-            height: 358.8px;
-    }
-   .errorSearch h1{
+@media (max-width: 550px) {
+  .cardOnGallery {
+    width: 305.5px;
+    height: 358.8px;
+  }
+  .errorSearch h1 {
     font-size: 1.2em;
-   }
-   .errorSearch p{
+  }
+  .errorSearch p {
     font-size: 15px;
-   }
-   .searchPage{
+  }
+  .searchPage {
     padding-top: 130px;
+  }
 }
-}
-

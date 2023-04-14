@@ -6,7 +6,6 @@ import {
   updateItemDescriptionLocalStorage,
 } from "../features/localStorage/localStorage";
 import {
-  
   setFavoriteFotos,
   setModalInfo,
 } from "../features/favorites/favoritesSlice";
@@ -35,7 +34,7 @@ export const Card = (props) => {
       heart.classList.remove("fa-regular");
       heart.classList.add("fa-solid");
       document.getElementById("favoriteModal").showModal();
-      dispatch(setFavoriteFotos(readFotoLocalStorage()))
+      dispatch(setFavoriteFotos(readFotoLocalStorage()));
 
       setTimeout(() => {
         document.getElementById("favoriteModal").close();
@@ -45,7 +44,7 @@ export const Card = (props) => {
       heart.classList.remove("fa-solid");
       heart.classList.add("fa-regular");
       document.getElementById("unFavoriteModal").showModal();
-      dispatch(setFavoriteFotos(readFotoLocalStorage()))
+      dispatch(setFavoriteFotos(readFotoLocalStorage()));
 
       setTimeout(() => {
         document.getElementById("unFavoriteModal").close();
@@ -56,11 +55,10 @@ export const Card = (props) => {
   const onTrashClickHandler = (e) => {
     const foto = props.foto;
     deleteFotoLocalStorage({ foto });
-   
-    dispatch(setFavoriteFotos(readFotoLocalStorage()))
+
+    dispatch(setFavoriteFotos(readFotoLocalStorage()));
 
     document.getElementById("deleteModal").showModal();
-    
 
     setTimeout(() => {
       document.getElementById("deleteModal").close();
@@ -97,7 +95,7 @@ export const Card = (props) => {
     updateItemDescriptionLocalStorage(props.foto, value);
     dispatch(setModalInfo(props.foto));
     setEditDescription(false);
-    dispatch(setFavoriteFotos(readFotoLocalStorage()))
+    dispatch(setFavoriteFotos(readFotoLocalStorage()));
   };
 
   if (props.page === "home") {
@@ -185,18 +183,17 @@ export const Card = (props) => {
             style={{ backgroundImage: picture.image, backgroundSize: "cover" }}
           ></div>
           <div className="icons">
-          <i
-                className=" favoriteCardIcon fa-solid fa-trash fa-lg"
-                style={{ paddingRight: "15px" }}
-                onClick={onTrashClickHandler}
-              ></i>
-            <div className="rightIcons">
-              
-              <i
-              className=" favoriteCardIcon fa-solid fa-download fa-lg"
+            <i
+              className=" favoriteCardIcon fa-solid fa-trash fa-lg"
               style={{ paddingRight: "15px" }}
-              onClick={onDownloadClickHandler}
+              onClick={onTrashClickHandler}
             ></i>
+            <div className="rightIcons">
+              <i
+                className=" favoriteCardIcon fa-solid fa-download fa-lg"
+                style={{ paddingRight: "15px" }}
+                onClick={onDownloadClickHandler}
+              ></i>
 
               <i
                 className="favoriteCardIcon fa-solid fa-circle-info fa-lg"
@@ -233,9 +230,7 @@ export const Card = (props) => {
                 <h6 className="infoTitle">Description:</h6>
                 <div className="descriptionField">
                   <div id="descriptionValue" className="descriptionValue">
-                    <p className="infoValue">
-                      {picture.description}
-                    </p>
+                    <p className="infoValue">{picture.description}</p>
                   </div>
 
                   <i
@@ -305,10 +300,12 @@ export const Card = (props) => {
               <div className="descriptionContainer">
                 <h6 className="infoTitle">Description:</h6>
                 <div className="descriptionField">
-                  <div id="descriptionValue" className="descriptionValue infoValue" contentEditable={true}>
-                  
-                      {picture.description}
-                  
+                  <div
+                    id="descriptionValue"
+                    className="descriptionValue infoValue"
+                    contentEditable={true}
+                  >
+                    {picture.description}
                   </div>
                 </div>
               </div>
@@ -357,5 +354,3 @@ export const Card = (props) => {
     }
   }
 };
-
-
