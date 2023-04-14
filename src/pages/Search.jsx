@@ -84,7 +84,7 @@ export const Search = () => {
               width: object.width,
               height: object.height,
               download: object.urls.full,
-              description: "none",
+              description: "",
             };
           }
           content.push(
