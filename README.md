@@ -17,7 +17,7 @@ Clone the project
 Go to the project directory
 
 ```bash
-  cd Hotel-Miranda-Dashboard
+  cd picsfinder
 ```
 
 Install dependencies
